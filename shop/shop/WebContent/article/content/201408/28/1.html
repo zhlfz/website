@@ -1,0 +1,338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>电子商务未来是否需要“移动” - Powered By SHOP++</title>
+	<meta name="author" content="SHOP++ Team" />
+	<meta name="copyright" content="SHOP++" />
+		<meta name="keywords" content="电子商务未来是否需要“移动”" />
+		<meta name="description" content="电子商务未来是否需要“移动”" />
+<link href="/resources/shop/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/resources/shop/css/article.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/resources/shop/js/jquery.js"></script>
+<script type="text/javascript" src="/resources/shop/js/common.js"></script>
+<script type="text/javascript">
+$().ready(function() {
+
+	var $hits = $("#hits");
+
+	// 查看点击数
+	$.ajax({
+		url: "/article/hits/28.jhtml",
+		type: "GET",
+		success: function(data) {
+			$hits.text(data);
+		}
+	});
+
+});
+</script>
+</head>
+<body>
+<script type="text/javascript">
+$().ready(function() {
+
+	var $headerLogin = $("#headerLogin");
+	var $headerRegister = $("#headerRegister");
+	var $headerUsername = $("#headerUsername");
+	var $headerLogout = $("#headerLogout");
+	var $productSearchForm = $("#productSearchForm");
+	var $keyword = $("#productSearchForm input");
+	var defaultKeyword = "商品搜索";
+	
+	var username = getCookie("username");
+	if (username != null) {
+		$headerUsername.text("您好, " + username).show();
+		$headerLogout.show();
+	} else {
+		$headerLogin.show();
+		$headerRegister.show();
+	}
+	
+	$keyword.focus(function() {
+		if ($keyword.val() == defaultKeyword) {
+			$keyword.val("");
+		}
+	});
+	
+	$keyword.blur(function() {
+		if ($keyword.val() == "") {
+			$keyword.val(defaultKeyword);
+		}
+	});
+	
+	$productSearchForm.submit(function() {
+		if ($.trim($keyword.val()) == "" || $keyword.val() == defaultKeyword) {
+			return false;
+		}
+	});
+
+});
+</script>
+<div class="container header">
+	<div class="span5">
+		<div class="logo">
+			<a href="/">
+				<img src="/upload/image/logo.gif" alt="SHOP++商城" />
+			</a>
+		</div>
+	</div>
+	<div class="span9">
+<div class="headerAd">
+					<img src="http://storage.shopxx.net/demo-image/3.0/ad/header.jpg" width="320" height="50" alt="正品保障" title="正品保障" />
+</div>	</div>
+	<div class="span10 last">
+		<div class="topNav clearfix">
+			<ul>
+				<li id="headerLogin" class="headerLogin">
+					<a href="/login.jhtml">登录</a>|
+				</li>
+				<li id="headerRegister" class="headerRegister">
+					<a href="/register.jhtml">注册</a>|
+				</li>
+				<li id="headerUsername" class="headerUsername"></li>
+				<li id="headerLogout" class="headerLogout">
+					<a href="/logout.jhtml">[退出]</a>|
+				</li>
+						<li>
+							<a href="/member/index.jhtml">会员中心</a>
+							|
+						</li>
+						<li>
+							<a href="/article/list/3.jhtml">购物指南</a>
+							|
+						</li>
+						<li>
+							<a href="/article/list/7.jhtml">关于我们</a>
+							
+						</li>
+			</ul>
+		</div>
+		<div class="cart">
+			<a href="/cart/list.jhtml">购物车</a>
+		</div>
+			<div class="phone">
+				客服热线:
+				<strong>400-8888888</strong>
+			</div>
+	</div>
+	<div class="span24">
+		<ul class="mainNav">
+					<li>
+						<a href="/">首页</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/1.jhtml">时尚女装</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/2.jhtml">精品男装</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/3.jhtml">精致内衣</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/4.jhtml">服饰配件</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/5.jhtml">时尚女鞋</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/6.jhtml">流行男鞋</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/9.jhtml">童装童鞋</a>
+						
+					</li>
+		</ul>
+	</div>
+	<div class="span24">
+		<div class="tagWrap">
+			<ul class="tag">
+						<li class="icon" style="background: url(http://storage.shopxx.net/demo-image/3.0/tag/hot.gif) right no-repeat;">
+							<a href="/product/list.jhtml?tagIds=1">热销</a>
+						</li>
+						<li class="icon" style="background: url(http://storage.shopxx.net/demo-image/3.0/tag/new.gif) right no-repeat;">
+							<a href="/product/list.jhtml?tagIds=2">最新</a>
+						</li>
+			</ul>
+			<div class="hotSearch">
+					热门搜索:
+						<a href="/product/search.jhtml?keyword=T%E6%81%A4">T恤</a>
+						<a href="/product/search.jhtml?keyword=%E8%A1%AC%E8%A1%AB">衬衫</a>
+						<a href="/product/search.jhtml?keyword=%E8%A5%BF%E6%9C%8D">西服</a>
+						<a href="/product/search.jhtml?keyword=%E8%A5%BF%E8%A3%A4">西裤</a>
+						<a href="/product/search.jhtml?keyword=%E6%A3%AE%E9%A9%AC">森马</a>
+						<a href="/product/search.jhtml?keyword=%E4%B8%83%E5%8C%B9%E7%8B%BC">七匹狼</a>
+						<a href="/product/search.jhtml?keyword=%E6%A2%B5%E5%B8%8C%E8%94%93">梵希蔓</a>
+						<a href="/product/search.jhtml?keyword=%E6%98%A5%E5%A4%8F%E6%96%B0%E6%AC%BE">春夏新款</a>
+						<a href="/product/search.jhtml?keyword=%E7%89%9B%E4%BB%94%E8%A3%A4">牛仔裤</a>
+			</div>
+			<div class="search">
+				<form id="productSearchForm" action="/product/search.jhtml" method="get">
+					<input name="keyword" class="keyword" value="商品搜索" maxlength="30" />
+					<button type="submit">搜索</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>	<div class="container articleContent">
+		<div class="span6">
+			<div class="hotArticleCategory">
+				<div class="title">热点分类</div>
+						<dl>
+							<dt>
+								<a href="/article/list/1.jhtml">商城动态</a>
+							</dt>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/article/list/2.jhtml">活动促销</a>
+							</dt>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/article/list/3.jhtml">购物指南</a>
+							</dt>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/article/list/4.jhtml">支付方式</a>
+							</dt>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/article/list/5.jhtml">配送方式</a>
+							</dt>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/article/list/6.jhtml">售后服务</a>
+							</dt>
+						</dl>
+						<dl class="last">
+							<dt>
+								<a href="/article/list/7.jhtml">关于我们</a>
+							</dt>
+						</dl>
+			</div>
+			<div class="hotArticle">
+				<div class="title">热点文章</div>
+				<ul>
+							<li>
+								<a href="/article/content/201408/30/1.html" title="电商变革 电商造节促销欲打翻身仗">电商变革 电商造节促销欲打翻身仗</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/35/1.html" title="中国电商交易额8.1万亿 网购占比提升">中国电商交易额8.1万亿 网购占比</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/27/1.html" title="五月靓丽女人节 呵护自己">五月靓丽女人节 呵护自己</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/28/1.html" title="电子商务未来是否需要“移动”">电子商务未来是否需要“移动”</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/34/1.html" title="看国茶商城被网友评为最诚信电商之一，言电商信誉、品牌塑造。">看国茶商城被网友评为最诚信电商</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/29/1.html" title="合并运费返还方案公告">合并运费返还方案公告</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/31/1.html" title="酷酷搭配逛街去 时尚美范赚足回头率">酷酷搭配逛街去 时尚美范赚足回头</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/33/1.html" title="创业者电商 促进中国经济生活转型">创业者电商 促进中国经济生活转型</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/32/1.html" title="谷歌正式进军电商行业 推购物快递服务">谷歌正式进军电商行业 推购物快递</a>
+							</li>
+				</ul>
+			</div>
+		</div>
+		<div class="span18 last">
+			<div class="path">
+				<ul>
+					<li>
+						<a href="/">首页</a>
+					</li>
+					<li>
+						<a href="/article/list/1.jhtml">商城动态</a>
+					</li>
+				</ul>
+			</div>
+			<div class="main">
+				<h1 class="title">电子商务未来是否需要“移动”</h1>
+				<div class="info">
+					日期: 2014-08-19 00:01:23
+					作者: 
+					点击数: <span id="hits">&nbsp;</span>
+				</div>
+				<div class="content">      2009年中，苹果公司市值超越谷歌；2010年5月，超越微软成为全球市值最高的科技公司；2012年8月12日，苹果市值超越石油巨头埃克森美孚，登顶全球市值榜首。一次次不断超越为我们展现的不仅是苹果公司活力与激情、动荡与辉煌相互交织的发展轨迹，更是新兴产业与传统产业之间的博弈，以互联网技术为基础的商业时代已经到来。<br /> <br /> <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; “移动电子商务”、“社交网络”、“4G”、“SoLoMo”……全新的技术和概念串联起了数字化时代下的鲜明特征，也为未来商业发展提供了更多的可能与选择。时代的快速变化总是超出我们的想象。Google推出的Android操作系统及相应手机在全球迅速流行并普及；以Facebook、Twitter、新浪微博等为代表的社交型平台网络也体现出越来越明显的移动化特征；在日本，De NA、Gree等移动社交网站占据了市值排行榜的前列。显而易见，互联网市场的竞争态势已经从企业间竞争逐渐向全产业链竞争开始转移。近日，搜索巨头Google一手举着刚刚收购的摩托罗拉手机，另一只手则紧握社交终端。马云的态度更是异常坚决：“今年淘宝最重要的任务就是把淘宝SNS化。”百度CEO李彦宏也宣称：“百度要大规模的进入SNS领域。” </p> <p> <br /> </p> <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 中国的互联网企业在看到社交网络未来发展机遇的同时，也将目光迅速转向到了对移动互联网产业的关注，具有混搭风格的SoLoMo模式则被看成是继PC互联网之后下一个十年的主流发展趋势。在“概念”横行的时代里，电商企业作为互联网生态圈中的又一重要分支，在面对移动互联网这块充满着巨大诱惑和极具挖掘潜力的“蛋糕”时，也纷纷推出了适用于Symbian、Android、iPhone等不同手机平台的移动客户端以完善自身产业链体系。 </p> <p> <br /> </p> <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 中国的移动电子商务目前尚处于起步阶段，有业内人士指出：“移动电子商务尤其是手机购物的发展，首先要依赖于智能手机的普及和网络对于应用的支撑，然后是用户习惯的培养，这些是基础。就目前来看，尽管如今智能手机市场发展迅速，但是普及度仍然不够，并且对于移动网络方面，也仍有待发展和完善。同时，与之相关的配套服务也应同比例提升，毕竟电子商务的实质在于‘商务’。 </p></div>
+			</div>
+	<div class="pagination">
+			<span class="firstPage">&nbsp;</span>
+			<span class="previousPage">&nbsp;</span>
+				<span class="currentPage">1</span>
+				<a href="2.html">2</a>
+			<a class="nextPage" href="2.html">&nbsp;</a>
+			
+			<a class="lastPage" href="2.html">&nbsp;</a>
+	</div>
+		</div>
+	</div>
+<div class="container footer">
+	<div class="span24">
+		<div class="footerAd">
+					<img src="http://storage.shopxx.net/demo-image/3.0/ad/footer.jpg" width="950" height="52" alt="我们的优势" title="我们的优势" />
+</div>	</div>
+	<div class="span24">
+		<ul class="bottomNav">
+					<li>
+						<a href="#">关于我们</a>
+						|
+					</li>
+					<li>
+						<a href="#">联系我们</a>
+						|
+					</li>
+					<li>
+						<a href="#">诚聘英才</a>
+						|
+					</li>
+					<li>
+						<a href="#">法律声明</a>
+						|
+					</li>
+					<li>
+						<a href="/friend_link.jhtml">友情链接</a>
+						|
+					</li>
+					<li>
+						<a href="/article/list/4.jhtml" target="_blank">支付方式</a>
+						|
+					</li>
+					<li>
+						<a href="/article/list/5.jhtml" target="_blank">配送方式</a>
+						|
+					</li>
+					<li>
+						<a href="http://www.shopxx.net">SHOP++官网</a>
+						|
+					</li>
+					<li>
+						<a href="http://bbs.shopxx.net">SHOP++论坛</a>
+						
+					</li>
+		</ul>
+	</div>
+	<div class="span24">
+		<div class="copyright">Copyright © 2005-2013 SHOP++商城 版权所有</div>
+	</div>
+</div></body>
+</html>

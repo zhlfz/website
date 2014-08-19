@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>交易条款 - Powered By SHOP++</title>
+	<meta name="author" content="SHOP++ Team" />
+	<meta name="copyright" content="SHOP++" />
+		<meta name="keywords" content="交易条款" />
+		<meta name="description" content="交易条款" />
+<link href="/resources/shop/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/resources/shop/css/article.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/resources/shop/js/jquery.js"></script>
+<script type="text/javascript" src="/resources/shop/js/common.js"></script>
+<script type="text/javascript">
+$().ready(function() {
+
+	var $hits = $("#hits");
+
+	// 查看点击数
+	$.ajax({
+		url: "/article/hits/12.jhtml",
+		type: "GET",
+		success: function(data) {
+			$hits.text(data);
+		}
+	});
+
+});
+</script>
+</head>
+<body>
+<script type="text/javascript">
+$().ready(function() {
+
+	var $headerLogin = $("#headerLogin");
+	var $headerRegister = $("#headerRegister");
+	var $headerUsername = $("#headerUsername");
+	var $headerLogout = $("#headerLogout");
+	var $productSearchForm = $("#productSearchForm");
+	var $keyword = $("#productSearchForm input");
+	var defaultKeyword = "商品搜索";
+	
+	var username = getCookie("username");
+	if (username != null) {
+		$headerUsername.text("您好, " + username).show();
+		$headerLogout.show();
+	} else {
+		$headerLogin.show();
+		$headerRegister.show();
+	}
+	
+	$keyword.focus(function() {
+		if ($keyword.val() == defaultKeyword) {
+			$keyword.val("");
+		}
+	});
+	
+	$keyword.blur(function() {
+		if ($keyword.val() == "") {
+			$keyword.val(defaultKeyword);
+		}
+	});
+	
+	$productSearchForm.submit(function() {
+		if ($.trim($keyword.val()) == "" || $keyword.val() == defaultKeyword) {
+			return false;
+		}
+	});
+
+});
+</script>
+<div class="container header">
+	<div class="span5">
+		<div class="logo">
+			<a href="/">
+				<img src="/upload/image/logo.gif" alt="SHOP++商城" />
+			</a>
+		</div>
+	</div>
+	<div class="span9">
+<div class="headerAd">
+					<img src="http://storage.shopxx.net/demo-image/3.0/ad/header.jpg" width="320" height="50" alt="正品保障" title="正品保障" />
+</div>	</div>
+	<div class="span10 last">
+		<div class="topNav clearfix">
+			<ul>
+				<li id="headerLogin" class="headerLogin">
+					<a href="/login.jhtml">登录</a>|
+				</li>
+				<li id="headerRegister" class="headerRegister">
+					<a href="/register.jhtml">注册</a>|
+				</li>
+				<li id="headerUsername" class="headerUsername"></li>
+				<li id="headerLogout" class="headerLogout">
+					<a href="/logout.jhtml">[退出]</a>|
+				</li>
+						<li>
+							<a href="/member/index.jhtml">会员中心</a>
+							|
+						</li>
+						<li>
+							<a href="/article/list/3.jhtml">购物指南</a>
+							|
+						</li>
+						<li>
+							<a href="/article/list/7.jhtml">关于我们</a>
+							
+						</li>
+			</ul>
+		</div>
+		<div class="cart">
+			<a href="/cart/list.jhtml">购物车</a>
+		</div>
+			<div class="phone">
+				客服热线:
+				<strong>400-8888888</strong>
+			</div>
+	</div>
+	<div class="span24">
+		<ul class="mainNav">
+					<li>
+						<a href="/">首页</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/1.jhtml">时尚女装</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/2.jhtml">精品男装</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/3.jhtml">精致内衣</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/4.jhtml">服饰配件</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/5.jhtml">时尚女鞋</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/6.jhtml">流行男鞋</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/9.jhtml">童装童鞋</a>
+						
+					</li>
+		</ul>
+	</div>
+	<div class="span24">
+		<div class="tagWrap">
+			<ul class="tag">
+						<li class="icon" style="background: url(http://storage.shopxx.net/demo-image/3.0/tag/hot.gif) right no-repeat;">
+							<a href="/product/list.jhtml?tagIds=1">热销</a>
+						</li>
+						<li class="icon" style="background: url(http://storage.shopxx.net/demo-image/3.0/tag/new.gif) right no-repeat;">
+							<a href="/product/list.jhtml?tagIds=2">最新</a>
+						</li>
+			</ul>
+			<div class="hotSearch">
+					热门搜索:
+						<a href="/product/search.jhtml?keyword=T%E6%81%A4">T恤</a>
+						<a href="/product/search.jhtml?keyword=%E8%A1%AC%E8%A1%AB">衬衫</a>
+						<a href="/product/search.jhtml?keyword=%E8%A5%BF%E6%9C%8D">西服</a>
+						<a href="/product/search.jhtml?keyword=%E8%A5%BF%E8%A3%A4">西裤</a>
+						<a href="/product/search.jhtml?keyword=%E6%A3%AE%E9%A9%AC">森马</a>
+						<a href="/product/search.jhtml?keyword=%E4%B8%83%E5%8C%B9%E7%8B%BC">七匹狼</a>
+						<a href="/product/search.jhtml?keyword=%E6%A2%B5%E5%B8%8C%E8%94%93">梵希蔓</a>
+						<a href="/product/search.jhtml?keyword=%E6%98%A5%E5%A4%8F%E6%96%B0%E6%AC%BE">春夏新款</a>
+						<a href="/product/search.jhtml?keyword=%E7%89%9B%E4%BB%94%E8%A3%A4">牛仔裤</a>
+			</div>
+			<div class="search">
+				<form id="productSearchForm" action="/product/search.jhtml" method="get">
+					<input name="keyword" class="keyword" value="商品搜索" maxlength="30" />
+					<button type="submit">搜索</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>	<div class="container articleContent">
+		<div class="span6">
+			<div class="hotArticleCategory">
+				<div class="title">热点分类</div>
+						<dl>
+							<dt>
+								<a href="/article/list/1.jhtml">商城动态</a>
+							</dt>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/article/list/2.jhtml">活动促销</a>
+							</dt>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/article/list/3.jhtml">购物指南</a>
+							</dt>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/article/list/4.jhtml">支付方式</a>
+							</dt>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/article/list/5.jhtml">配送方式</a>
+							</dt>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/article/list/6.jhtml">售后服务</a>
+							</dt>
+						</dl>
+						<dl class="last">
+							<dt>
+								<a href="/article/list/7.jhtml">关于我们</a>
+							</dt>
+						</dl>
+			</div>
+			<div class="hotArticle">
+				<div class="title">热点文章</div>
+				<ul>
+							<li>
+								<a href="/article/content/201408/1/1.html" title="购物流程">购物流程</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/2/1.html" title="会员等级">会员等级</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/5/1.html" title="退换货政策">退换货政策</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/7/1.html" title="货到付款">货到付款</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/3/1.html" title="新用户注册">新用户注册</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/4/1.html" title="预存款支付">预存款支付</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/14/1.html" title="会员积分">会员积分</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/8/1.html" title="服务理念">服务理念</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/18/1.html" title="防骗提示">防骗提示</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/6/1.html" title="发票制度">发票制度</a>
+							</li>
+				</ul>
+			</div>
+		</div>
+		<div class="span18 last">
+			<div class="path">
+				<ul>
+					<li>
+						<a href="/">首页</a>
+					</li>
+					<li>
+						<a href="/article/list/3.jhtml">购物指南</a>
+					</li>
+				</ul>
+			</div>
+			<div class="main">
+				<h1 class="title">交易条款</h1>
+				<div class="info">
+					日期: 2014-08-19 00:01:08
+					作者: 
+					点击数: <span id="hits">&nbsp;</span>
+				</div>
+				<div class="content"><p> 客户在接受商品订购与送货的同时，有义务遵守以下交易条款。您在商城下订单之前或接受商城送货之前，请您仔细阅读以下条款： </p> <p> <br /> 1.订购的商品价格以您下订单时价格为准。<br /> &nbsp;<br /> 2.请清楚准确地填写您的真实姓名、送货地址及联系方式。因如下情况造成订单延迟或无法配送等，商城将不承担责任：<br /> a. 客户提供错误信息和不详细的地址; <br /> b. 货物送达无人签收，由此造成的重复配送所产生的费用及相关的后果; <br /> c. 不可抗力，例如：自然灾害、交通戒严、突发战争等。<br /> &nbsp;<br /> 安全性： </p> <p> 无论您是通过哪种方式支付、购买，我们会保证交易信息的安全，并由商城授权的员工处理您的订单。<br /> &nbsp;<br /> 隐私权： </p> <p> 我们尊重您的隐私权，在任何情况下，我们都不会将您的个人和订单信息出售或泄露给任何第三方（国家司法机关调取除外）。我们从网站上或电话中得到的所有客户信息仅用来处理您的相关订单。<br /> &nbsp;<br /> 免责： </p> <p> 如因不可抗力或其它无法控制的原因使商城销售系统崩溃或无法正常使用导致网上交易无法完成或丢失有关的信息、记录等，我们会尽可能合理地协助处理善后事宜，并努力使客户免受经济损失。<br /> &nbsp;<br /> 客户监督： </p> <p> 我们希望通过不懈努力，为客户提供最佳服务，商城在给客户提供服务的全过程中接受客户的监督。<br /> &nbsp;<br /> 争议处理： </p> <p> 如果客户与我们之间发生任何争议，可依据当时双方所认定的协议及相关法律进行解决。<br /> &nbsp;<br /> 我们承诺：<br /> 我们秉承质优价低、放心满意的销售理念为您服务。我们所出售的商品均为正品行货，与您亲临商场选购的商品一样享受相同的质量保证；含有质量保证书的商品按照保证书的承诺执行，其它商品按国家有关规定执行。<br /> &nbsp;<br /> 特别提示：&nbsp;<br /> 我们保证出货时商品外包装的完好无缺。请您在收到货物时当场仔细检查发票及货品与送货单的商品是否一致，如果发现商品缺少或已破损等情况，请在配送人员还在现场时与我司客服部联系；如果发现邮寄包装破损，货物在运输途中破损等情况，请当场指出并拒收，拒收后请致电我司客服。如您已签收或他人代为签收，则视为商品外包装，商品数量及内容无误，我司将无法受理。 </p></div>
+			</div>
+		</div>
+	</div>
+<div class="container footer">
+	<div class="span24">
+		<div class="footerAd">
+					<img src="http://storage.shopxx.net/demo-image/3.0/ad/footer.jpg" width="950" height="52" alt="我们的优势" title="我们的优势" />
+</div>	</div>
+	<div class="span24">
+		<ul class="bottomNav">
+					<li>
+						<a href="#">关于我们</a>
+						|
+					</li>
+					<li>
+						<a href="#">联系我们</a>
+						|
+					</li>
+					<li>
+						<a href="#">诚聘英才</a>
+						|
+					</li>
+					<li>
+						<a href="#">法律声明</a>
+						|
+					</li>
+					<li>
+						<a href="/friend_link.jhtml">友情链接</a>
+						|
+					</li>
+					<li>
+						<a href="/article/list/4.jhtml" target="_blank">支付方式</a>
+						|
+					</li>
+					<li>
+						<a href="/article/list/5.jhtml" target="_blank">配送方式</a>
+						|
+					</li>
+					<li>
+						<a href="http://www.shopxx.net">SHOP++官网</a>
+						|
+					</li>
+					<li>
+						<a href="http://bbs.shopxx.net">SHOP++论坛</a>
+						
+					</li>
+		</ul>
+	</div>
+	<div class="span24">
+		<div class="copyright">Copyright © 2005-2013 SHOP++商城 版权所有</div>
+	</div>
+</div></body>
+</html>

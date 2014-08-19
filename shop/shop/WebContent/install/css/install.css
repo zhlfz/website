@@ -1,0 +1,435 @@
+@charset "utf-8";
+
+/*
+ * Copyright 2005-2013 shopxx.net. All rights reserved.
+ * Support: http://www.shopxx.net
+ * License: http://www.shopxx.net/license
+ * 
+ * Style - Install
+ * Version: 3.0
+ */
+
+/* ---------- Reset ---------- */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	outline: 0px;
+}
+
+html {
+	_width: 100%;
+	_height: 100%;
+	-webkit-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	_filter: expression(document.execCommand("BackgroundImageCache", false, true));
+}
+
+body {
+	_width: 100%;
+	_height: 100%;
+	font: 12px tahoma, Arial, Verdana, sans-serif;
+	color: #666666;
+	background-color: #ffffff;
+	_background-image: url(about: blank);
+	_background-attachment: fixed;
+}
+
+a {
+	color: #666666;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #ff6600;
+	text-decoration: none;
+}
+
+img {
+	vertical-align: middle;
+	image-rendering: optimizeQuality;
+	-ms-interpolation-mode: bicubic;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+input {
+	vertical-align: middle;
+	outline: none;
+}
+
+textarea {
+	outline: 0px;
+	resize: none;
+}
+
+/* ---------- Base ---------- */
+
+.black {
+	color: black;
+}
+
+.white {
+	color: white;
+}
+
+.red {
+	color: red;
+}
+
+.green {
+	color: green;
+}
+
+.blue {
+	color: blue;
+}
+
+.hidden {
+	display: none;
+}
+
+.clearfix {
+	*zoom: 1;
+}
+
+.clearfix:after {
+	height: 0px;
+	display: block;
+	clear: both;
+	visibility: hidden;
+	overflow: hidden;
+	content: "\0020";
+}
+
+/* ---------- Form ---------- */
+
+input.text {
+	width: 180px;
+	height: 24px;
+	line-height: 24px;
+	padding: 0px 4px;
+	-webkit-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	border-top: 1px solid #999999;
+	border-right: 1px solid #e1e1e1;
+	border-bottom: 1px solid #e1e1e1;
+	border-left: 1px solid #999999;
+}
+
+input.text[type=file] {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+input.text:hover {
+	-webkit-transition: box-shadow linear 0.2s;
+	-moz-transition: box-shadow linear 0.2s;
+	-ms-transition: box-shadow linear 0.2s;
+	-o-transition: box-shadow linear 0.2s;
+	transition: box-shadow linear 0.2s;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+	-moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+	border: 1px solid #74b9ef;
+}
+
+input.text:disabled {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	background-color: #f6f6f6;
+}
+
+input.text:disabled:hover {
+	-webkit-transition: none;
+	-moz-transition: none;
+	-ms-transition: none;
+	-o-transition: none;
+	transition: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border-top: 1px solid #999999;
+	border-right: 1px solid #e1e1e1;
+	border-bottom: 1px solid #e1e1e1;
+	border-left: 1px solid #999999;
+	background-color: #f6f6f6;
+}
+
+textarea.text {
+	width: 350px;
+	height: 120px;
+	padding: 4px;
+	color: #666666;
+	font-size: 12px;
+	-webkit-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	border-top: 1px solid #999999;
+	border-right: 1px solid #e1e1e1;
+	border-bottom: 1px solid #e1e1e1;
+	border-left: 1px solid #999999;
+}
+
+textarea.text:hover {
+	-webkit-transition: box-shadow linear 0.2s;
+	-moz-transition: box-shadow linear 0.2s;
+	-ms-transition: box-shadow linear 0.2s;
+	-o-transition: box-shadow linear 0.2s;
+	transition: box-shadow linear 0.2s;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+	-moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+	border: 1px solid #74b9ef;
+}
+
+textarea.text:disabled {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	background-color: #f6f6f6;
+}
+
+textarea.text:disabled:hover {
+	-webkit-transition: none;
+	-moz-transition: none;
+	-ms-transition: none;
+	-o-transition: none;
+	transition: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border-top: 1px solid #999999;
+	border-right: 1px solid #e1e1e1;
+	border-bottom: 1px solid #e1e1e1;
+	border-left: 1px solid #999999;
+	background-color: #f6f6f6;
+}
+
+span.requireField {
+	line-height: 12px;
+	padding: 5px;
+	zoom: 1;
+}
+
+/* ---------- Install ---------- */
+
+.header {
+	width: 1000px;
+	margin: 10px auto 0px auto;
+}
+
+.title {
+	height: 43px;
+	line-height: 43px;
+	padding-left: 10px;
+	color: #4e4e4e;
+	font-size:14px;
+	font-family: "Microsoft YaHei";
+	border-left: 1px solid #a4bed5;
+	border-right: 1px solid #a4bed5;
+	background: url(../images/install_x.gif) 0px 0px repeat-x;
+}
+
+.banner {
+	height: 100px;
+	padding-bottom: 3px;
+	border-left: 1px solid #a4bed5;
+	border-right: 1px solid #a4bed5;
+	background: url(../images/install.gif) 0px 0px no-repeat;
+}
+
+.body {
+	width: 998px;
+	margin: 0px auto 10px auto;
+	border-left: 1px solid #a4bed5;
+	border-right: 1px solid #a4bed5;
+	border-bottom: 1px solid #a4bed5;
+}
+
+.bodyLeft {
+	width: 220px;
+	float: left;
+	margin-right: 4px;
+}
+
+.step {
+	width: 220px;
+	height: 300px;
+	background: url(../images/install.gif) 0px -120px no-repeat;
+}
+
+.step li {
+	height: 60px;
+	line-height: 60px;
+	padding-left: 30px;
+	text-shadow: 1px 1px #dddddd;
+	background: url(../images/install.gif) -390px -120px no-repeat;
+}
+
+.step li.current {
+	background: url(../images/install.gif) -390px -180px no-repeat;
+}
+
+.bodyRight {
+	width: 770px;
+	float: left;
+}
+
+.bodyRight iframe {
+	width: 768px;
+	height: 400px;
+	margin-bottom: 4px;
+	overflow-x: hidden;
+	border: 1px solid #dfdfdf;
+}
+
+.bodyRight table {
+	width: 100%;
+	margin-bottom: 4px;
+	border: 1px solid #c8d8e6;
+}
+
+.bodyRight table th {
+	line-height: 35px;
+	padding-left: 10px;
+	color: #074b88;
+	text-align: left;
+	background-color: #eef4f7;
+}
+
+.bodyRight table td {
+	height: 35px;
+	line-height: 30px;
+	padding-left: 10px;
+	color: #303030;
+	border: 1px solid #e8e8e8;
+}
+
+.bodyRight .message {
+	line-height: 80px;
+	color: red;
+}
+
+.bodyRight .exception {
+	height: 300px;
+	line-height: 20px;
+	padding: 5px;
+	color: #6f6f6f;
+	overflow-y: scroll;
+	scrollbar-face-color: #ffffff;
+	scrollbar-shadow-color: #a4bed5;
+	scrollbar-highlight-color: #a4bed5;
+	scrollbar-3dlight-color: #ffffff;
+	scrollbar-darkshadow-color: #ffffff;
+	scrollbar-track-color: #ffffff;
+	scrollbar-arrow-color: #a4bed5;
+}
+
+.buttonArea {
+	width: 988px;
+	height: 60px;
+	line-height: 60px;
+	clear: both;
+	padding-right: 10px;
+	text-align: right;
+	background: url(../images/install_x.gif) 0px -60px repeat-x;
+}
+
+.body .button {
+	width: 125px;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	outline: none;
+	cursor: pointer;
+	blr: expression(this.hideFocus = true);
+	border: none;
+	background: url(../images/install.gif) -240px -120px no-repeat;
+}
+
+.body .button:hover {
+	background: url(../images/install.gif) -240px -180px no-repeat;
+}
+
+.footer {
+	width: 1000px;
+	margin: 0px auto;
+}
+
+.footer .copyright {
+	line-height: 20px;
+	text-align: right;
+	color: #888888;
+}
+
+.loadingBar {
+	width: 208px;
+	height: 20px;
+	line-height: 20px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	margin: 10px 0px;
+	zoom: 1;
+	*display: inline;
+	background: url(../images/loading_bar.gif) center no-repeat;
+}
+
+.installSuccess {
+	width: 647px;
+	height: 113px;
+	display: none;
+	padding: 10px 30px;
+	margin: 40px 0px 20px 40px;
+	font-family: "Microsoft YaHei";
+	background: url(../images/install.gif) 0px -450px no-repeat;
+}
+
+.installSuccess strong {
+	line-height: 50px;
+	display: block;
+	font-size: 18px;
+	color: #ffffff;
+}
+
+.installSuccess span {
+	display: block;
+	color: #ffffff;
+	font-size: 14px;
+}
+
+.installUrl {
+	width: 623px;
+	line-height: 25px;
+	margin: 0px 0px 40px 40px;
+	padding: 5px 10px;
+	display: none;
+	border: 4px solid #f2f2f2;
+}
+
+fieldset {
+	line-height: 30px;
+	padding: 0px 10px;
+	margin: 10px 20px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #cccccc;
+}

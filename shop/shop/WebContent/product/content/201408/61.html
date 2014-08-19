@@ -1,0 +1,1050 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Max Toney 春装男士休闲西服便西装 时尚修身外套小西装 男 229 - Powered By SHOP++</title>
+	<meta name="author" content="SHOP++ Team" />
+	<meta name="copyright" content="SHOP++" />
+		<meta name="keywords" content="Max Toney 春装男士休闲西服便西装 时尚修身外套小西装 男 229" />
+		<meta name="description" content="Max Toney 春装男士休闲西服便西装 时尚修身外套小西装 男 229" />
+<link href="/resources/shop/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/resources/shop/css/product.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/resources/shop/js/jquery.js"></script>
+<script type="text/javascript" src="/resources/shop/js/jquery.tools.js"></script>
+<script type="text/javascript" src="/resources/shop/js/jquery.jqzoom.js"></script>
+<script type="text/javascript" src="/resources/shop/js/jquery.validate.js"></script>
+<script type="text/javascript" src="/resources/shop/js/common.js"></script>
+<script type="text/javascript">
+$().ready(function() {
+
+	var $historyProduct = $("#historyProduct ul");
+	var $clearHistoryProduct = $("#clearHistoryProduct");
+	var $zoom = $("#zoom");
+	var $scrollable = $("#scrollable");
+	var $thumbnail = $("#scrollable a");
+	var $specification = $("#specification dl");
+	var $specificationTitle = $("#specification div");
+	var $specificationValue = $("#specification a");
+	var $productNotifyForm = $("#productNotifyForm");
+	var $productNotify = $("#productNotify");
+	var $productNotifyEmail = $("#productNotify input");
+	var $addProductNotify = $("#addProductNotify");
+	var $quantity = $("#quantity");
+	var $increase = $("#increase");
+	var $decrease = $("#decrease");
+	var $addCart = $("#addCart");
+	var $addFavorite = $("#addFavorite");
+	var $window = $(window);
+	var $bar = $("#bar ul");
+	var $introductionTab = $("#introductionTab");
+	var $parameterTab = $("#parameterTab");
+	var $reviewTab = $("#reviewTab");
+	var $consultationTab = $("#consultationTab");
+	var $introduction = $("#introduction");
+	var $parameter = $("#parameter");
+	var $review = $("#review");
+	var $addReview = $("#addReview");
+	var $consultation = $("#consultation");
+	var $addConsultation = $("#addConsultation");
+	var barTop = $bar.offset().top;
+	var productMap = {};
+productMap[61] = { path: null, specificationValues: [ "26", "55" ] }; productMap[65] = { path: "/product/content/201408/65.html", specificationValues: [ "28", "55" ] }; productMap[64] = { path: "/product/content/201408/64.html", specificationValues: [ "28", "56" ] }; productMap[62] = { path: "/product/content/201408/62.html", specificationValues: [ "26", "54" ] }; productMap[63] = { path: "/product/content/201408/63.html", specificationValues: [ "28", "57" ] }; productMap[59] = { path: "/product/content/201408/59.html", specificationValues: [ "26", "57" ] }; productMap[60] = { path: "/product/content/201408/60.html", specificationValues: [ "26", "56" ] }; productMap[66] = { path: "/product/content/201408/66.html", specificationValues: [ "28", "54" ] };	
+	// 锁定规格值
+	lockSpecificationValue();
+	
+	// 商品图片放大镜
+	$zoom.jqzoom({
+		zoomWidth: 368,
+		zoomHeight: 368,
+		title: false,
+		showPreload: false,
+		preloadImages: false
+	});
+	
+	// 商品缩略图滚动
+	$scrollable.scrollable();
+	
+	$thumbnail.hover(function() {
+		var $this = $(this);
+		if ($this.hasClass("current")) {
+			return false;
+		} else {
+			$thumbnail.removeClass("current");
+			$this.addClass("current").click();
+		}
+	});
+	
+	// 规格值选择
+	$specificationValue.click(function() {
+		var $this = $(this);
+		if ($this.hasClass("locked")) {
+			return false;
+		}
+		$this.toggleClass("selected").parent().siblings().children("a").removeClass("selected");
+		var selectedIds = new Array();
+		$specificationValue.filter(".selected").each(function(i) {
+			selectedIds[i] = $(this).attr("val");
+		});
+		var locked = true;
+		$.each(productMap, function(i, product) {
+			if (product.specificationValues.length == selectedIds.length && contains(product.specificationValues, selectedIds)) {
+				if (product.path != null) {
+					location.href = "" + product.path;
+					locked = false;
+				}
+				return false;
+			}
+		});
+		if (locked) {
+			lockSpecificationValue();
+		}
+		$specificationTitle.hide();
+		return false;
+	});
+	
+	// 锁定规格值
+	function lockSpecificationValue() {
+		var selectedIds = new Array();
+		$specificationValue.filter(".selected").each(function(i) {
+			selectedIds[i] = $(this).attr("val");
+		});
+		$specification.each(function() {
+			var $this = $(this);
+			var selectedId = $this.find("a.selected").attr("val");
+			var otherIds = $.grep(selectedIds, function(n, i) {
+				return n != selectedId;
+			});
+			$this.find("a").each(function() {
+				var $this = $(this);
+				otherIds.push($this.attr("val"));
+				var locked = true;
+				$.each(productMap, function(i, product) {
+					if (contains(product.specificationValues, otherIds)) {
+						locked = false;
+						return false;
+					}
+				});
+				if (locked) {
+					$this.addClass("locked");
+				} else {
+					$this.removeClass("locked");
+				}
+				otherIds.pop();
+			});
+		});
+	}
+	
+	// 判断是否包含
+	function contains(array, values) {
+		var contains = true;
+		for(i in values) {
+			if ($.inArray(values[i], array) < 0) {
+				contains = false;
+				break;
+			}
+		}
+		return contains;
+	}
+	
+	// 到货通知
+	$addProductNotify.click(function() {
+			var specificationValueIds = new Array();
+			$specificationValue.filter(".selected").each(function(i) {
+				specificationValueIds[i] = $(this).attr("val");
+			});
+			if (specificationValueIds.length != 2) {
+				$specificationTitle.show();
+				return false;
+			}
+		if ($addProductNotify.val() == "到货通知我") {
+			$addProductNotify.val("确定登记");
+			$productNotify.show();
+			$productNotifyEmail.focus();
+			if ($.trim($productNotifyEmail.val()) == "") {
+				$.ajax({
+					url: "/product_notify/email.jhtml",
+					type: "GET",
+					dataType: "json",
+					cache: false,
+					success: function(data) {
+						$productNotifyEmail.val(data.email);
+					}
+				});
+			}
+		} else {
+			$productNotifyForm.submit();
+		}
+		return false;
+	});
+	
+	// 到货通知表单验证
+	$productNotifyForm.validate({
+		rules: {
+			email: {
+				required: true,
+				email: true
+			}
+		},
+		submitHandler: function(form) {
+			$.ajax({
+				url: "/product_notify/save.jhtml",
+				type: "POST",
+				data: {productId: 61, email: $productNotifyEmail.val()},
+				dataType: "json",
+				cache: false,
+				beforeSend: function() {
+					$addProductNotify.prop("disabled", true);
+				},
+				success: function(data) {
+					if (data.message.type == "success") {
+						$addProductNotify.val("到货通知我");
+						$productNotify.hide();
+					}
+					$.message(data.message);
+				},
+				complete: function() {
+					$addProductNotify.prop("disabled", false);
+				}
+			});
+		}
+	});
+	
+	// 购买数量
+	$quantity.keypress(function(event) {
+		var key = event.keyCode ? event.keyCode : event.which;
+		if ((key >= 48 && key <= 57) || key==8) {
+			return true;
+		} else {
+			return false;
+		}
+	});
+	
+	// 增加购买数量
+	$increase.click(function() {
+		var quantity = $quantity.val();
+		if (/^\d*[1-9]\d*$/.test(quantity)) {
+			$quantity.val(parseInt(quantity) + 1);
+		} else {
+			$quantity.val(1);
+		}
+	});
+	
+	// 减少购买数量
+	$decrease.click(function() {
+		var quantity = $quantity.val();
+		if (/^\d*[1-9]\d*$/.test(quantity) && parseInt(quantity) > 1) {
+			$quantity.val(parseInt(quantity) - 1);
+		} else {
+			$quantity.val(1);
+		}
+	});
+	
+	// 加入购物车
+	$addCart.click(function() {
+			var specificationValueIds = new Array();
+			$specificationValue.filter(".selected").each(function(i) {
+				specificationValueIds[i] = $(this).attr("val");
+			});
+			if (specificationValueIds.length != 2) {
+				$specificationTitle.show();
+				return false;
+			}
+		var quantity = $quantity.val();
+		if (/^\d*[1-9]\d*$/.test(quantity) && parseInt(quantity) > 0) {
+			$.ajax({
+				url: "/cart/add.jhtml",
+				type: "POST",
+				data: {id: 61, quantity: quantity},
+				dataType: "json",
+				cache: false,
+				success: function(message) {
+					$.message(message);
+				}
+			});
+		} else {
+			$.message("warn", "购买数量必须为正整数");
+		}
+	});
+	
+	// 添加商品收藏
+	$addFavorite.click(function() {
+		$.ajax({
+			url: "/member/favorite/add.jhtml?id=61",
+			type: "POST",
+			dataType: "json",
+			cache: false,
+			success: function(message) {
+				$.message(message);
+			}
+		});
+		return false;
+	});
+	
+	$window.scroll(function() {
+		var scrollTop = $(this).scrollTop();
+		if (scrollTop > barTop) {
+			if (window.XMLHttpRequest) {
+				$bar.css({position: "fixed", top: 0});
+			} else {
+				$bar.css({top: scrollTop});
+			}
+			var introductionTop = $introduction.size() > 0 ? $introduction.offset().top - 36 : null;
+			var parameterTop = $parameter.size() > 0 ? $parameter.offset().top - 36 : null;
+			var reviewTop = $review.size() > 0 ? $review.offset().top - 36 : null;
+			var consultationTop = $consultation.size() > 0 ? $consultation.offset().top - 36 : null;
+			if (consultationTop != null && scrollTop >= consultationTop) {
+				$bar.find("li").removeClass("current");
+				$consultationTab.addClass("current");
+			} else if (reviewTop != null && scrollTop >= reviewTop) {
+				$bar.find("li").removeClass("current");
+				$reviewTab.addClass("current");
+			} else if (parameterTop != null && scrollTop >= parameterTop) {
+				$bar.find("li").removeClass("current");
+				$parameterTab.addClass("current");
+			} else if (introductionTop != null && scrollTop >= introductionTop) {
+				$bar.find("li").removeClass("current");
+				$introductionTab.addClass("current");
+			}
+		} else {
+			$bar.find("li").removeClass("current");
+			$bar.css({position: "absolute", top: barTop});
+		}
+	});
+	
+		// 发表商品评论
+		$addReview.click(function() {
+			if ($.checkLogin()) {
+				return true;
+			} else {
+				$.redirectLogin("/review/add/61.jhtml", "必须登录后才能发表商品评论");
+				return false;
+			}
+		});
+	
+		// 发表商品咨询
+		$addConsultation.click(function() {
+			if ($.checkLogin()) {
+				return true;
+			} else {
+				$.redirectLogin("/consultation/add/61.jhtml", "必须登录后才能发表商品咨询");
+				return false;
+			}
+		});
+	
+	// 浏览记录
+	var historyProduct = getCookie("historyProduct");
+	var historyProductIds = historyProduct != null ? historyProduct.split(",") : new Array();
+	for (var i = 0; i < historyProductIds.length; i ++) {
+		if (historyProductIds[i] == "61") {
+			historyProductIds.splice(i, 1);
+			break;
+		}
+	}
+	historyProductIds.unshift("61");
+	if (historyProductIds.length > 6) {
+		historyProductIds.pop();
+	}
+	addCookie("historyProduct", historyProductIds.join(","), {path: "/"});
+	$.ajax({
+		url: "/product/history.jhtml",
+		type: "GET",
+		data: {ids: historyProductIds},
+		dataType: "json",
+		traditional: true,
+		cache: false,
+		success: function(data) {
+			$.each(data, function (index, product) {
+				var thumbnail = product.thumbnail != null ? product.thumbnail : "/upload/image/default_thumbnail.jpg";
+				$historyProduct.append('<li><img src="' + thumbnail + '" \/><a href="' + product.path + '">' + product.name + '<\/a><span>' + currency(product.price, true) + '<\/span><\/li>');
+			});
+		}
+	});
+	
+	// 清空浏览记录
+	$clearHistoryProduct.click(function() {
+		$historyProduct.empty();
+		$(this).text("暂无记录");
+		removeCookie("historyProduct", {path: "/"});
+	});
+	
+	// 点击数
+	$.ajax({
+		url: "/product/hits/61.jhtml",
+		type: "GET"
+	});
+	
+});
+</script>
+</head>
+<body>
+<script type="text/javascript">
+$().ready(function() {
+
+	var $headerLogin = $("#headerLogin");
+	var $headerRegister = $("#headerRegister");
+	var $headerUsername = $("#headerUsername");
+	var $headerLogout = $("#headerLogout");
+	var $productSearchForm = $("#productSearchForm");
+	var $keyword = $("#productSearchForm input");
+	var defaultKeyword = "商品搜索";
+	
+	var username = getCookie("username");
+	if (username != null) {
+		$headerUsername.text("您好, " + username).show();
+		$headerLogout.show();
+	} else {
+		$headerLogin.show();
+		$headerRegister.show();
+	}
+	
+	$keyword.focus(function() {
+		if ($keyword.val() == defaultKeyword) {
+			$keyword.val("");
+		}
+	});
+	
+	$keyword.blur(function() {
+		if ($keyword.val() == "") {
+			$keyword.val(defaultKeyword);
+		}
+	});
+	
+	$productSearchForm.submit(function() {
+		if ($.trim($keyword.val()) == "" || $keyword.val() == defaultKeyword) {
+			return false;
+		}
+	});
+
+});
+</script>
+<div class="container header">
+	<div class="span5">
+		<div class="logo">
+			<a href="/">
+				<img src="/upload/image/logo.gif" alt="SHOP++商城" />
+			</a>
+		</div>
+	</div>
+	<div class="span9">
+<div class="headerAd">
+					<img src="http://storage.shopxx.net/demo-image/3.0/ad/header.jpg" width="320" height="50" alt="正品保障" title="正品保障" />
+</div>	</div>
+	<div class="span10 last">
+		<div class="topNav clearfix">
+			<ul>
+				<li id="headerLogin" class="headerLogin">
+					<a href="/login.jhtml">登录</a>|
+				</li>
+				<li id="headerRegister" class="headerRegister">
+					<a href="/register.jhtml">注册</a>|
+				</li>
+				<li id="headerUsername" class="headerUsername"></li>
+				<li id="headerLogout" class="headerLogout">
+					<a href="/logout.jhtml">[退出]</a>|
+				</li>
+						<li>
+							<a href="/member/index.jhtml">会员中心</a>
+							|
+						</li>
+						<li>
+							<a href="/article/list/3.jhtml">购物指南</a>
+							|
+						</li>
+						<li>
+							<a href="/article/list/7.jhtml">关于我们</a>
+							
+						</li>
+			</ul>
+		</div>
+		<div class="cart">
+			<a href="/cart/list.jhtml">购物车</a>
+		</div>
+			<div class="phone">
+				客服热线:
+				<strong>400-8888888</strong>
+			</div>
+	</div>
+	<div class="span24">
+		<ul class="mainNav">
+					<li>
+						<a href="/">首页</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/1.jhtml">时尚女装</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/2.jhtml">精品男装</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/3.jhtml">精致内衣</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/4.jhtml">服饰配件</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/5.jhtml">时尚女鞋</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/6.jhtml">流行男鞋</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/9.jhtml">童装童鞋</a>
+						
+					</li>
+		</ul>
+	</div>
+	<div class="span24">
+		<div class="tagWrap">
+			<ul class="tag">
+						<li class="icon" style="background: url(http://storage.shopxx.net/demo-image/3.0/tag/hot.gif) right no-repeat;">
+							<a href="/product/list.jhtml?tagIds=1">热销</a>
+						</li>
+						<li class="icon" style="background: url(http://storage.shopxx.net/demo-image/3.0/tag/new.gif) right no-repeat;">
+							<a href="/product/list.jhtml?tagIds=2">最新</a>
+						</li>
+			</ul>
+			<div class="hotSearch">
+					热门搜索:
+						<a href="/product/search.jhtml?keyword=T%E6%81%A4">T恤</a>
+						<a href="/product/search.jhtml?keyword=%E8%A1%AC%E8%A1%AB">衬衫</a>
+						<a href="/product/search.jhtml?keyword=%E8%A5%BF%E6%9C%8D">西服</a>
+						<a href="/product/search.jhtml?keyword=%E8%A5%BF%E8%A3%A4">西裤</a>
+						<a href="/product/search.jhtml?keyword=%E6%A3%AE%E9%A9%AC">森马</a>
+						<a href="/product/search.jhtml?keyword=%E4%B8%83%E5%8C%B9%E7%8B%BC">七匹狼</a>
+						<a href="/product/search.jhtml?keyword=%E6%A2%B5%E5%B8%8C%E8%94%93">梵希蔓</a>
+						<a href="/product/search.jhtml?keyword=%E6%98%A5%E5%A4%8F%E6%96%B0%E6%AC%BE">春夏新款</a>
+						<a href="/product/search.jhtml?keyword=%E7%89%9B%E4%BB%94%E8%A3%A4">牛仔裤</a>
+			</div>
+			<div class="search">
+				<form id="productSearchForm" action="/product/search.jhtml" method="get">
+					<input name="keyword" class="keyword" value="商品搜索" maxlength="30" />
+					<button type="submit">搜索</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>	<div class="container productContent">
+		<div class="span6">
+			<div class="hotProductCategory">
+						<dl>
+							<dt>
+								<a href="/product/list/1.jhtml">时尚女装</a>
+							</dt>
+									<dd>
+										<a href="/product/list/11.jhtml">连衣裙</a>
+									</dd>
+									<dd>
+										<a href="/product/list/12.jhtml">针织衫</a>
+									</dd>
+									<dd>
+										<a href="/product/list/13.jhtml">短外套</a>
+									</dd>
+									<dd>
+										<a href="/product/list/14.jhtml">小西装</a>
+									</dd>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/product/list/2.jhtml">精品男装</a>
+							</dt>
+									<dd>
+										<a href="/product/list/21.jhtml">针织衫</a>
+									</dd>
+									<dd>
+										<a href="/product/list/22.jhtml">POLO衫</a>
+									</dd>
+									<dd>
+										<a href="/product/list/23.jhtml">休闲裤</a>
+									</dd>
+									<dd>
+										<a href="/product/list/24.jhtml">牛仔裤</a>
+									</dd>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/product/list/3.jhtml">精致内衣</a>
+							</dt>
+									<dd>
+										<a href="/product/list/31.jhtml">女式内裤</a>
+									</dd>
+									<dd>
+										<a href="/product/list/32.jhtml">男式内裤</a>
+									</dd>
+									<dd>
+										<a href="/product/list/33.jhtml">保暖内衣</a>
+									</dd>
+									<dd>
+										<a href="/product/list/34.jhtml">塑身衣</a>
+									</dd>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/product/list/4.jhtml">服饰配件</a>
+							</dt>
+									<dd>
+										<a href="/product/list/41.jhtml">女士腰带</a>
+									</dd>
+									<dd>
+										<a href="/product/list/42.jhtml">男士皮带</a>
+									</dd>
+									<dd>
+										<a href="/product/list/43.jhtml">女士围巾</a>
+									</dd>
+									<dd>
+										<a href="/product/list/44.jhtml">男士围巾</a>
+									</dd>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/product/list/5.jhtml">时尚女鞋</a>
+							</dt>
+									<dd>
+										<a href="/product/list/51.jhtml">高帮鞋</a>
+									</dd>
+									<dd>
+										<a href="/product/list/52.jhtml">雪地靴</a>
+									</dd>
+									<dd>
+										<a href="/product/list/53.jhtml">中筒靴</a>
+									</dd>
+									<dd>
+										<a href="/product/list/54.jhtml">单鞋</a>
+									</dd>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/product/list/6.jhtml">流行男鞋</a>
+							</dt>
+									<dd>
+										<a href="/product/list/59.jhtml">低帮鞋</a>
+									</dd>
+									<dd>
+										<a href="/product/list/60.jhtml">高帮鞋</a>
+									</dd>
+									<dd>
+										<a href="/product/list/61.jhtml">休闲鞋</a>
+									</dd>
+									<dd>
+										<a href="/product/list/62.jhtml">正装鞋</a>
+									</dd>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/product/list/7.jhtml">潮流女包</a>
+							</dt>
+									<dd>
+										<a href="/product/list/63.jhtml">单肩包</a>
+									</dd>
+									<dd>
+										<a href="/product/list/64.jhtml">双肩包</a>
+									</dd>
+									<dd>
+										<a href="/product/list/65.jhtml">手提包</a>
+									</dd>
+									<dd>
+										<a href="/product/list/66.jhtml">手拿包</a>
+									</dd>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/product/list/8.jhtml">精品男包</a>
+							</dt>
+									<dd>
+										<a href="/product/list/67.jhtml">单肩男</a>
+									</dd>
+									<dd>
+										<a href="/product/list/68.jhtml">双肩包</a>
+									</dd>
+									<dd>
+										<a href="/product/list/69.jhtml">手提包</a>
+									</dd>
+									<dd>
+										<a href="/product/list/70.jhtml">手拿包</a>
+									</dd>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/product/list/9.jhtml">童装童鞋</a>
+							</dt>
+									<dd>
+										<a href="/product/list/71.jhtml">运动鞋</a>
+									</dd>
+									<dd>
+										<a href="/product/list/72.jhtml">牛仔裤</a>
+									</dd>
+									<dd>
+										<a href="/product/list/73.jhtml">套装</a>
+									</dd>
+									<dd>
+										<a href="/product/list/74.jhtml">裤子</a>
+									</dd>
+						</dl>
+						<dl class="last">
+							<dt>
+								<a href="/product/list/10.jhtml">时尚饰品</a>
+							</dt>
+									<dd>
+										<a href="/product/list/75.jhtml">项链</a>
+									</dd>
+									<dd>
+										<a href="/product/list/76.jhtml">手链</a>
+									</dd>
+									<dd>
+										<a href="/product/list/77.jhtml">戒指</a>
+									</dd>
+									<dd>
+										<a href="/product/list/78.jhtml">耳饰</a>
+									</dd>
+						</dl>
+			</div>
+			<div class="hotProduct">
+				<div class="title">热销商品</div>
+				<ul>
+							<li>
+								<a href="/product/content/201408/109.html" title="2013春夏柒牌男装正品西服 男立领修身韩版 西服套装 902C141200">2013春夏柒牌男装正品西服 男立领</a>
+									<div>
+										<div>评分: </div>
+										<div class="score8"></div>
+										<div>4.0</div>
+									</div>
+								<div>销售价: <strong>￥899.00元</strong></div>
+								<div>月销量: <em>0</em></div>
+							</li>
+							<li>
+								<a href="/product/content/201408/66.html" title="Max Toney 春装男士休闲西服便西装 时尚修身外套小西装 男 229">Max Toney 春装男士休闲西服便西</a>
+									<div>
+										<div>评分: </div>
+										<div class="score8"></div>
+										<div>4.0</div>
+									</div>
+								<div>销售价: <strong>￥453.00元</strong></div>
+								<div>月销量: <em>0</em></div>
+							</li>
+							<li>
+								<a href="/product/content/201408/58.html" title="Max Toney 春夏男士休闲西服西装 永不起褶休闲小西装外套 男627">Max Toney 春夏男士休闲西服西装</a>
+									<div>
+										<div>评分: </div>
+										<div class="score8"></div>
+										<div>4.0</div>
+									</div>
+								<div>销售价: <strong>￥422.00元</strong></div>
+								<div>月销量: <em>0</em></div>
+							</li>
+							<li class="last">
+								<a href="/product/content/201408/46.html" title="Max Toney奢华春装 单扣高档全羊毛休闲西装西服 男 219">Max Toney奢华春装 单扣高档全羊</a>
+									<div>
+										<div>评分: </div>
+										<div class="score9"></div>
+										<div>4.6</div>
+									</div>
+								<div>销售价: <strong>￥420.00元</strong></div>
+								<div>月销量: <em>0</em></div>
+							</li>
+				</ul>
+			</div>
+			<div id="historyProduct" class="historyProduct">
+				<div class="title">最近浏览过的</div>
+				<ul></ul>
+				<a href="javascript:;" id="clearHistoryProduct" class="clearHistoryProduct">清除历史记录</a>
+			</div>
+		</div>
+		<div class="span18 last">
+			<div class="path">
+				<ul>
+					<li>
+						<a href="/">首页</a>
+					</li>
+							<li>
+								<a href="/product/list/2.jhtml">精品男装</a>
+							</li>
+					<li>
+						<a href="/product/list/27.jhtml">西服</a>
+					</li>
+				</ul>
+			</div>
+			<div class="productImage">
+					<a id="zoom" href="http://storage.shopxx.net/demo-image/3.0/201301/cae1bc6b-0159-4ce0-9a9c-4926df231b4f-large.jpg" rel="gallery">
+						<img class="medium" src="http://storage.shopxx.net/demo-image/3.0/201301/cae1bc6b-0159-4ce0-9a9c-4926df231b4f-medium.jpg" />
+					</a>
+				<a href="javascript:;" class="prev"></a>
+				<div id="scrollable" class="scrollable">
+					<div class="items">
+								<a class="current" href="javascript:;" rel="{gallery: 'gallery', smallimage: 'http://storage.shopxx.net/demo-image/3.0/201301/cae1bc6b-0159-4ce0-9a9c-4926df231b4f-medium.jpg', largeimage: 'http://storage.shopxx.net/demo-image/3.0/201301/cae1bc6b-0159-4ce0-9a9c-4926df231b4f-large.jpg'}"><img src="http://storage.shopxx.net/demo-image/3.0/201301/cae1bc6b-0159-4ce0-9a9c-4926df231b4f-thumbnail.jpg" title="" /></a>
+								<a href="javascript:;" rel="{gallery: 'gallery', smallimage: 'http://storage.shopxx.net/demo-image/3.0/201301/f355ff0a-f8ed-47a1-95d1-9e69c9030b5b-medium.jpg', largeimage: 'http://storage.shopxx.net/demo-image/3.0/201301/f355ff0a-f8ed-47a1-95d1-9e69c9030b5b-large.jpg'}"><img src="http://storage.shopxx.net/demo-image/3.0/201301/f355ff0a-f8ed-47a1-95d1-9e69c9030b5b-thumbnail.jpg" title="" /></a>
+					</div>
+				</div>
+				<a href="javascript:;" class="next"></a>
+			</div>
+			<div class="name">Max Toney 春装男士休闲西服便西装 时尚修身外套小西装 男 229</div>
+			<div class="sn">
+				<div>编号: 201304158</div>
+			</div>
+			<div class="info">
+				<dl>
+					<dt>销售价:</dt>
+					<dd>
+						<strong>￥453.00</strong>
+							市场价:
+							<del>￥543.60</del>
+					</dd>
+				</dl>
+					<dl>
+						<dt>赠送积分:</dt>
+						<dd>
+							<span>453</span>
+						</dd>
+					</dl>
+			</div>
+				<div class="action">
+						<div id="specification" class="specification clearfix">
+							<div class="title">请选择商品规格</div>
+								<dl>
+									<dt>
+										<span title="颜色">颜色:</span>
+									</dt>
+											<dd>
+												<a href="javascript:;" class="image selected" val="26"><img src="http://storage.shopxx.net/demo-image/3.0/specification/6.gif" alt="灰色" title="灰色" /><span title="点击取消选择">&nbsp;</span></a>
+											</dd>
+											<dd>
+												<a href="javascript:;" class="image" val="28"><img src="http://storage.shopxx.net/demo-image/3.0/specification/8.gif" alt="黑色" title="黑色" /><span title="点击取消选择">&nbsp;</span></a>
+											</dd>
+								</dl>
+								<dl>
+									<dt>
+										<span title="尺码">尺码:</span>
+									</dt>
+											<dd>
+												<a href="javascript:;" class="text" val="54">M<span title="点击取消选择">&nbsp;</span></a>
+											</dd>
+											<dd>
+												<a href="javascript:;" class="text selected" val="55">L<span title="点击取消选择">&nbsp;</span></a>
+											</dd>
+											<dd>
+												<a href="javascript:;" class="text" val="56">XL<span title="点击取消选择">&nbsp;</span></a>
+											</dd>
+											<dd>
+												<a href="javascript:;" class="text" val="57">XXL<span title="点击取消选择">&nbsp;</span></a>
+											</dd>
+								</dl>
+						</div>
+						<dl class="quantity">
+							<dt>购买数量:</dt>
+							<dd>
+								<input type="text" id="quantity" name="quantity" value="1" maxlength="4" onpaste="return false;" />
+								<div>
+									<span id="increase" class="increase">&nbsp;</span>
+									<span id="decrease" class="decrease">&nbsp;</span>
+								</div>
+							</dd>
+							<dd>
+								件
+							</dd>
+						</dl>
+					<div class="buy">
+							<input type="button" id="addCart" class="addCart" value="加入购物车" />
+						<a href="javascript:;" id="addFavorite">收藏商品</a>
+					</div>
+				</div>
+			<div id="bar" class="bar">
+				<ul>
+						<li id="introductionTab">
+							<a href="#introduction">商品介绍</a>
+						</li>
+						<li id="parameterTab">
+							<a href="#parameter">商品参数</a>
+						</li>
+						<li id="reviewTab">
+							<a href="#review">商品评论</a>
+						</li>
+						<li id="consultationTab">
+							<a href="#consultation">商品咨询</a>
+						</li>
+				</ul>
+			</div>
+				<table class="brief">
+							<tr>
+						<th>适用季节</th>
+						<td>
+							<span title=" 春"> 春</span>
+						</td>
+						<th>面料主材质</th>
+						<td>
+							<span title="羊毛">羊毛</span>
+						</td>
+						<th>羊毛含量</th>
+						<td>
+							<span title="50%-69%">50%-69%</span>
+						</td>
+							</tr>
+							<tr>
+						<th>风格</th>
+						<td>
+							<span title="时尚休闲">时尚休闲</span>
+						</td>
+						<th>面料分类</th>
+						<td>
+							<span title="毛呢布">毛呢布</span>
+						</td>
+						<th>袖长</th>
+						<td>
+							<span title="长袖">长袖</span>
+						</td>
+							</tr>
+				</table>
+				<div id="introduction" name="introduction" class="introduction">
+					<div class="title">
+						<strong>商品介绍</strong>
+					</div>
+					<div>
+						<img src="http://storage.shopxx.net/demo-image/3.0/201301/8234c8a5-b1ce-4bd5-9f16-b9d13e4dc63d.jpg" />
+					</div>
+				</div>
+				<div id="parameter" name="parameter" class="parameter">
+					<div class="title">
+						<strong>商品参数</strong>
+					</div>
+					<table>
+							<tr>
+								<th class="group" colspan="2">基本参数</th>
+							</tr>
+									<tr>
+										<th>版型</th>
+										<td>修身型</td>
+									</tr>
+									<tr>
+										<th>领型</th>
+										<td>窄领型（7cm以下）</td>
+									</tr>
+									<tr>
+										<th>衣门襟</th>
+										<td>一粒单排扣</td>
+									</tr>
+									<tr>
+										<th>风格</th>
+										<td>时尚休闲</td>
+									</tr>
+									<tr>
+										<th>面料分类</th>
+										<td>毛呢布</td>
+									</tr>
+									<tr>
+										<th>款式细节</th>
+										<td>后中开衩</td>
+									</tr>
+									<tr>
+										<th>袖长</th>
+										<td>长袖</td>
+									</tr>
+									<tr>
+										<th>面料主材质</th>
+										<td>羊毛</td>
+									</tr>
+									<tr>
+										<th>羊毛含量</th>
+										<td>50%-69%</td>
+									</tr>
+									<tr>
+										<th>适用季节</th>
+										<td> 春</td>
+									</tr>
+									<tr>
+										<th>场合</th>
+										<td>休闲</td>
+									</tr>
+									<tr>
+										<th>消费群体</th>
+										<td>青年</td>
+									</tr>
+									<tr>
+										<th>款式品名</th>
+										<td>便服单西</td>
+									</tr>
+									<tr>
+										<th>下摆设计</th>
+										<td>直下摆</td>
+									</tr>
+									<tr>
+										<th>男装厚薄</th>
+										<td>普通</td>
+									</tr>
+									<tr>
+										<th>衣长</th>
+										<td>常规（衣长到臀围上下）</td>
+									</tr>
+					</table>
+				</div>
+				<div id="review" name="review" class="review">
+					<div class="title">商品评论</div>
+					<div class="content clearfix">
+							<p>
+								暂无商品评论信息 <a href="/review/add/61.jhtml" id="addReview">[发表商品评论]</a>
+							</p>
+					</div>
+				</div>
+				<div id="consultation" name="consultation" class="consultation">
+					<div class="title">商品咨询</div>
+					<div class="content">
+								<p>
+									暂无商品咨询信息 <a href="/consultation/add/61.jhtml" id="addConsultation">[发表商品咨询]</a>
+								</p>
+					</div>
+				</div>
+		</div>
+	</div>
+<div class="container footer">
+	<div class="span24">
+		<div class="footerAd">
+					<img src="http://storage.shopxx.net/demo-image/3.0/ad/footer.jpg" width="950" height="52" alt="我们的优势" title="我们的优势" />
+</div>	</div>
+	<div class="span24">
+		<ul class="bottomNav">
+					<li>
+						<a href="#">关于我们</a>
+						|
+					</li>
+					<li>
+						<a href="#">联系我们</a>
+						|
+					</li>
+					<li>
+						<a href="#">诚聘英才</a>
+						|
+					</li>
+					<li>
+						<a href="#">法律声明</a>
+						|
+					</li>
+					<li>
+						<a href="/friend_link.jhtml">友情链接</a>
+						|
+					</li>
+					<li>
+						<a href="/article/list/4.jhtml" target="_blank">支付方式</a>
+						|
+					</li>
+					<li>
+						<a href="/article/list/5.jhtml" target="_blank">配送方式</a>
+						|
+					</li>
+					<li>
+						<a href="http://www.shopxx.net">SHOP++官网</a>
+						|
+					</li>
+					<li>
+						<a href="http://bbs.shopxx.net">SHOP++论坛</a>
+						
+					</li>
+		</ul>
+	</div>
+	<div class="span24">
+		<div class="copyright">Copyright © 2005-2013 SHOP++商城 版权所有</div>
+	</div>
+</div></body>
+</html>

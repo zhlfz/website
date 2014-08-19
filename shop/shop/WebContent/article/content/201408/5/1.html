@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>退换货政策 - Powered By SHOP++</title>
+	<meta name="author" content="SHOP++ Team" />
+	<meta name="copyright" content="SHOP++" />
+		<meta name="keywords" content="退换货政策" />
+		<meta name="description" content="退换货政策" />
+<link href="/resources/shop/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/resources/shop/css/article.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/resources/shop/js/jquery.js"></script>
+<script type="text/javascript" src="/resources/shop/js/common.js"></script>
+<script type="text/javascript">
+$().ready(function() {
+
+	var $hits = $("#hits");
+
+	// 查看点击数
+	$.ajax({
+		url: "/article/hits/5.jhtml",
+		type: "GET",
+		success: function(data) {
+			$hits.text(data);
+		}
+	});
+
+});
+</script>
+</head>
+<body>
+<script type="text/javascript">
+$().ready(function() {
+
+	var $headerLogin = $("#headerLogin");
+	var $headerRegister = $("#headerRegister");
+	var $headerUsername = $("#headerUsername");
+	var $headerLogout = $("#headerLogout");
+	var $productSearchForm = $("#productSearchForm");
+	var $keyword = $("#productSearchForm input");
+	var defaultKeyword = "商品搜索";
+	
+	var username = getCookie("username");
+	if (username != null) {
+		$headerUsername.text("您好, " + username).show();
+		$headerLogout.show();
+	} else {
+		$headerLogin.show();
+		$headerRegister.show();
+	}
+	
+	$keyword.focus(function() {
+		if ($keyword.val() == defaultKeyword) {
+			$keyword.val("");
+		}
+	});
+	
+	$keyword.blur(function() {
+		if ($keyword.val() == "") {
+			$keyword.val(defaultKeyword);
+		}
+	});
+	
+	$productSearchForm.submit(function() {
+		if ($.trim($keyword.val()) == "" || $keyword.val() == defaultKeyword) {
+			return false;
+		}
+	});
+
+});
+</script>
+<div class="container header">
+	<div class="span5">
+		<div class="logo">
+			<a href="/">
+				<img src="/upload/image/logo.gif" alt="SHOP++商城" />
+			</a>
+		</div>
+	</div>
+	<div class="span9">
+<div class="headerAd">
+					<img src="http://storage.shopxx.net/demo-image/3.0/ad/header.jpg" width="320" height="50" alt="正品保障" title="正品保障" />
+</div>	</div>
+	<div class="span10 last">
+		<div class="topNav clearfix">
+			<ul>
+				<li id="headerLogin" class="headerLogin">
+					<a href="/login.jhtml">登录</a>|
+				</li>
+				<li id="headerRegister" class="headerRegister">
+					<a href="/register.jhtml">注册</a>|
+				</li>
+				<li id="headerUsername" class="headerUsername"></li>
+				<li id="headerLogout" class="headerLogout">
+					<a href="/logout.jhtml">[退出]</a>|
+				</li>
+						<li>
+							<a href="/member/index.jhtml">会员中心</a>
+							|
+						</li>
+						<li>
+							<a href="/article/list/3.jhtml">购物指南</a>
+							|
+						</li>
+						<li>
+							<a href="/article/list/7.jhtml">关于我们</a>
+							
+						</li>
+			</ul>
+		</div>
+		<div class="cart">
+			<a href="/cart/list.jhtml">购物车</a>
+		</div>
+			<div class="phone">
+				客服热线:
+				<strong>400-8888888</strong>
+			</div>
+	</div>
+	<div class="span24">
+		<ul class="mainNav">
+					<li>
+						<a href="/">首页</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/1.jhtml">时尚女装</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/2.jhtml">精品男装</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/3.jhtml">精致内衣</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/4.jhtml">服饰配件</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/5.jhtml">时尚女鞋</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/6.jhtml">流行男鞋</a>
+						|
+					</li>
+					<li>
+						<a href="/product/list/9.jhtml">童装童鞋</a>
+						
+					</li>
+		</ul>
+	</div>
+	<div class="span24">
+		<div class="tagWrap">
+			<ul class="tag">
+						<li class="icon" style="background: url(http://storage.shopxx.net/demo-image/3.0/tag/hot.gif) right no-repeat;">
+							<a href="/product/list.jhtml?tagIds=1">热销</a>
+						</li>
+						<li class="icon" style="background: url(http://storage.shopxx.net/demo-image/3.0/tag/new.gif) right no-repeat;">
+							<a href="/product/list.jhtml?tagIds=2">最新</a>
+						</li>
+			</ul>
+			<div class="hotSearch">
+					热门搜索:
+						<a href="/product/search.jhtml?keyword=T%E6%81%A4">T恤</a>
+						<a href="/product/search.jhtml?keyword=%E8%A1%AC%E8%A1%AB">衬衫</a>
+						<a href="/product/search.jhtml?keyword=%E8%A5%BF%E6%9C%8D">西服</a>
+						<a href="/product/search.jhtml?keyword=%E8%A5%BF%E8%A3%A4">西裤</a>
+						<a href="/product/search.jhtml?keyword=%E6%A3%AE%E9%A9%AC">森马</a>
+						<a href="/product/search.jhtml?keyword=%E4%B8%83%E5%8C%B9%E7%8B%BC">七匹狼</a>
+						<a href="/product/search.jhtml?keyword=%E6%A2%B5%E5%B8%8C%E8%94%93">梵希蔓</a>
+						<a href="/product/search.jhtml?keyword=%E6%98%A5%E5%A4%8F%E6%96%B0%E6%AC%BE">春夏新款</a>
+						<a href="/product/search.jhtml?keyword=%E7%89%9B%E4%BB%94%E8%A3%A4">牛仔裤</a>
+			</div>
+			<div class="search">
+				<form id="productSearchForm" action="/product/search.jhtml" method="get">
+					<input name="keyword" class="keyword" value="商品搜索" maxlength="30" />
+					<button type="submit">搜索</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>	<div class="container articleContent">
+		<div class="span6">
+			<div class="hotArticleCategory">
+				<div class="title">热点分类</div>
+						<dl>
+							<dt>
+								<a href="/article/list/1.jhtml">商城动态</a>
+							</dt>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/article/list/2.jhtml">活动促销</a>
+							</dt>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/article/list/3.jhtml">购物指南</a>
+							</dt>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/article/list/4.jhtml">支付方式</a>
+							</dt>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/article/list/5.jhtml">配送方式</a>
+							</dt>
+						</dl>
+						<dl>
+							<dt>
+								<a href="/article/list/6.jhtml">售后服务</a>
+							</dt>
+						</dl>
+						<dl class="last">
+							<dt>
+								<a href="/article/list/7.jhtml">关于我们</a>
+							</dt>
+						</dl>
+			</div>
+			<div class="hotArticle">
+				<div class="title">热点文章</div>
+				<ul>
+							<li>
+								<a href="/article/content/201408/1/1.html" title="购物流程">购物流程</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/2/1.html" title="会员等级">会员等级</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/5/1.html" title="退换货政策">退换货政策</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/7/1.html" title="货到付款">货到付款</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/3/1.html" title="新用户注册">新用户注册</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/4/1.html" title="预存款支付">预存款支付</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/14/1.html" title="会员积分">会员积分</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/8/1.html" title="服务理念">服务理念</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/18/1.html" title="防骗提示">防骗提示</a>
+							</li>
+							<li>
+								<a href="/article/content/201408/6/1.html" title="发票制度">发票制度</a>
+							</li>
+				</ul>
+			</div>
+		</div>
+		<div class="span18 last">
+			<div class="path">
+				<ul>
+					<li>
+						<a href="/">首页</a>
+					</li>
+					<li>
+						<a href="/article/list/3.jhtml">购物指南</a>
+					</li>
+				</ul>
+			</div>
+			<div class="main">
+				<h1 class="title">退换货政策</h1>
+				<div class="info">
+					日期: 2014-08-19 00:01:01
+					作者: 
+					点击数: <span id="hits">&nbsp;</span>
+				</div>
+				<div class="content">退换货说明:<br />  <br /> 一、 退换货总则：<br /> 商城所售商品都是正品行货。商城所有商家将严格按照国家三包政策，针对所售商品履行保修、换货和退货的义务。 <br />  <br /> 1.符合以下情况，由您实际收到货物日期起7日内可退货；您实际收到货物日期起8日至第15日内可换货：<br />      1）国家三包所规定的功能性故障<br />       经由生产厂家指定或特约售后服务中心检测确认故障属实，并出据出检报告证实。<br />      2）到货物品坏损或缺件情况<br />        经售后人员核查情况属实（期间可能需要快递人员证明或要求您提供实物照片等，以便售后人员快速做出判断及时处理）。<br />  <br /> 2.由您实际收到货物日期起15日以上，为了不耽误您使用，缩短故障商品的维修时间，建议您在商品出现故障时直接联系当地厂商维修网点处理。请访问厂商官方网站或拨打厂商服务热线，咨询维修网点信息，凭借发票可到网点维修。国家三包规定保修期内，无品牌厂商售后服务产品，商城提供免费维修服务。<br />  <br /> 二、补充说明：<br /> 1.以下情况不在退货、换货、维修范围之内：<br />      1）任何非商城出售的商品；<br />      2）对于过保商品（超过三包保修期的商品）；<br />      3）未经授权的维修、误用、碰撞、疏忽、滥用、进液、事故、改动、不正确的安装所造成的商品质量问题，或撕毁、涂改标贴、机器序号、防伪标记；<br />      4）商品的外包装、附件、赠品（券）、说明书不完整，（券）发票缺失或涂改；<br />      5）商品使用正常磨损；<br />      6）手机、数码、IT类商品通过软件升级可以排除的故障不属于三包范围内的故障，只要送至当地生产厂家指定或特约售后服务中心升级即可；<br />      7）高端品牌箱包及饰品QC标签已损坏的；<br />      8）出于安全和卫生考虑，贴身用品（内衣等）、食品、化妆品售出后不予退换，经权威部门检测商品存在内在质量问题者除外。<br />  <br /> 2.判断实际收货日期规则：<br />      1）快递配送或者自提的订单：以客户实际签收日期为准；</div>
+			</div>
+	<div class="pagination">
+			<span class="firstPage">&nbsp;</span>
+			<span class="previousPage">&nbsp;</span>
+				<span class="currentPage">1</span>
+				<a href="2.html">2</a>
+			<a class="nextPage" href="2.html">&nbsp;</a>
+			
+			<a class="lastPage" href="2.html">&nbsp;</a>
+	</div>
+		</div>
+	</div>
+<div class="container footer">
+	<div class="span24">
+		<div class="footerAd">
+					<img src="http://storage.shopxx.net/demo-image/3.0/ad/footer.jpg" width="950" height="52" alt="我们的优势" title="我们的优势" />
+</div>	</div>
+	<div class="span24">
+		<ul class="bottomNav">
+					<li>
+						<a href="#">关于我们</a>
+						|
+					</li>
+					<li>
+						<a href="#">联系我们</a>
+						|
+					</li>
+					<li>
+						<a href="#">诚聘英才</a>
+						|
+					</li>
+					<li>
+						<a href="#">法律声明</a>
+						|
+					</li>
+					<li>
+						<a href="/friend_link.jhtml">友情链接</a>
+						|
+					</li>
+					<li>
+						<a href="/article/list/4.jhtml" target="_blank">支付方式</a>
+						|
+					</li>
+					<li>
+						<a href="/article/list/5.jhtml" target="_blank">配送方式</a>
+						|
+					</li>
+					<li>
+						<a href="http://www.shopxx.net">SHOP++官网</a>
+						|
+					</li>
+					<li>
+						<a href="http://bbs.shopxx.net">SHOP++论坛</a>
+						
+					</li>
+		</ul>
+	</div>
+	<div class="span24">
+		<div class="copyright">Copyright © 2005-2013 SHOP++商城 版权所有</div>
+	</div>
+</div></body>
+</html>
